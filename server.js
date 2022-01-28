@@ -8,10 +8,13 @@ const mockUserData=[
     {name:'Mark'},
     {name:'Jill'}
 ]
-app.get('/users',function(req,res){
+//sending a request get
+app.get('/users/:id',function(req,res){
+    //adding dynamic GET route
+    console.log(req.params.id);
     res.json({
         success:true,
         message:'successfully got users. Nice!',
-        users:mockUserData
+        users:req.params.id
     })
 })
